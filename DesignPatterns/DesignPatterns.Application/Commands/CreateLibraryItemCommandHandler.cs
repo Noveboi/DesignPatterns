@@ -5,7 +5,7 @@ using FluentResults.Extensions;
 
 namespace DesignPatterns.Application.Commands;
 
-internal sealed class CreateLibraryItemCommandHandler(ILibraryItemRepository repository, IUnitOfWork unitOfWork) 
+internal sealed class CreateLibraryItemCommandHandler(IRepository<ILibraryItem> repository, IUnitOfWork unitOfWork) 
     : IRequestHandler<CreateLibraryItemCommand, Result<ILibraryItem>>
 {
     public Task<Result<ILibraryItem>> Handle(CreateLibraryItemCommand request, CancellationToken cancellationToken)

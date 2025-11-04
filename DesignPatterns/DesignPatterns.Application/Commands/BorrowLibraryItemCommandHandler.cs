@@ -5,13 +5,13 @@ using FluentResults.Extensions;
 
 namespace DesignPatterns.Application.Commands;
 
-internal sealed class BorrowLibraryItemCommandHandler(ILibraryItemRepository repository) 
+internal sealed class BorrowLibraryItemCommandHandler(IQueries<ILibraryItem> items) 
     : IRequestHandler<BorrowLibraryItemCommand, Result>
 {
     public Task<Result> Handle(BorrowLibraryItemCommand request, CancellationToken cancellationToken)
     {
         return Result.Ok()
-            .Bind(() => repository.GetAsync(request.LibraryItemId, cancellationToken))
+            .Bind(() => items.GetByIdAsync(request.LibraryItemId, cancellationToken))
             .Bind(MapToBorrowable)
             .Bind(item => item.Borrow(request.Borrower));
     }
