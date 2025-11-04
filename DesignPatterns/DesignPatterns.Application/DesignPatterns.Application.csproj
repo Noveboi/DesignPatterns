@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <Using Include="MediatR"/>
+        <Using Include="FluentResults"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DesignPatterns.Domain\DesignPatterns.Domain.csproj" />
+    </ItemGroup>
+    
 </Project>

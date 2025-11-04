@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Core.Items;
+using FluentResults;
 
 namespace DesignPatterns.Core.Factories;
 
@@ -12,5 +13,5 @@ public interface ILibraryItemFactory
     /// </summary>
     /// <param name="itemType">The type of library item to create</param>
     /// <param name="title">The title of the item.</param>
-    ILibraryItem Create(string itemType, string title);
+    Result<ILibraryItem> Create(string itemType, string title);
 }
