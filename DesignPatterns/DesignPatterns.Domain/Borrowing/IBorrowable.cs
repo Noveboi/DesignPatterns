@@ -7,10 +7,9 @@ namespace DesignPatterns.Domain.Borrowing;
 /// </summary>
 public interface IBorrowable
 {
-    DateTime? BorrowedAtUtc { get; }
-    User? BorrowedBy { get; }
-    TimeSpan LoanPeriod { get; }
+    BorrowStatus BorrowStatus { get; }
     
     Result Borrow(User user);
     Result Return(User user);
+    Result PayFine(User user);
 }

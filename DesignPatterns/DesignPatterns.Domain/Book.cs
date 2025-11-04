@@ -9,18 +9,17 @@ public sealed class Book : ILibraryItem, IBorrowable
     
     public Guid Id { get; } = Guid.CreateVersion7();
     public string Title { get; }
-    public DateTime? BorrowedAtUtc => _borrowBehavior.BorrowedAtUtc;
-    public User? BorrowedBy => _borrowBehavior.BorrowedBy;
-    public TimeSpan LoanPeriod => _borrowBehavior.LoanPeriod;
+    public BorrowStatus BorrowStatus => _borrowBehavior.Status;
 
     internal Book(string title, BorrowingBehavior? borrowingBehavior = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         
         Title = title;
-        _borrowBehavior = borrowingBehavior ?? new BorrowingBehavior(TimeSpan.FromDays(14));
+        _borrowBehavior = borrowingBehavior ?? new BorrowingBehavior(new BorrowStatus(TimeSpan.FromDays(14)));
     }
 
     public Result Borrow(User user) => _borrowBehavior.Borrow(user, DateTime.UtcNow);
-    public Result Return(User user) => _borrowBehavior.Return(user);
+    public Result Return(User user) => _borrowBehavior.Return(user, DateTime.UtcNow);
+    public Result PayFine(User user) => _borrowBehavior.PayFine(user, DateTime.UtcNow);
 }

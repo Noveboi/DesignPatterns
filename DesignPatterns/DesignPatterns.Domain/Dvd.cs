@@ -5,24 +5,21 @@ namespace DesignPatterns.Domain;
 
 public sealed class Dvd : ILibraryItem, IBorrowable
 {
-    private readonly BorrowingBehavior _borrowingBehavior;
+    private readonly BorrowingBehavior _borrowBehavior;
     
     public Guid Id { get; } = Guid.CreateVersion7();
     public string Title { get; }
-
-    public DateTime? BorrowedAtUtc => _borrowingBehavior.BorrowedAtUtc;
-    public User? BorrowedBy => _borrowingBehavior.BorrowedBy;
-    public TimeSpan LoanPeriod => _borrowingBehavior.LoanPeriod;
+    public BorrowStatus BorrowStatus => _borrowBehavior.Status;
 
     internal Dvd(string title, BorrowingBehavior? borrowingBehavior = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         
         Title = title;
-        _borrowingBehavior = borrowingBehavior ?? new BorrowingBehavior(TimeSpan.FromDays(7));
+        _borrowBehavior = borrowingBehavior ?? new BorrowingBehavior(new BorrowStatus(TimeSpan.FromDays(7)));
     }
 
-    public Result Borrow(User user) => _borrowingBehavior.Borrow(user, DateTime.UtcNow);
-
-    public Result Return(User user) => _borrowingBehavior.Return(user);
+    public Result Borrow(User user) => _borrowBehavior.Borrow(user, DateTime.UtcNow);
+    public Result Return(User user) => _borrowBehavior.Return(user, DateTime.UtcNow);
+    public Result PayFine(User user) => _borrowBehavior.PayFine(user, DateTime.UtcNow);
 }

@@ -13,11 +13,9 @@ public sealed class BorrowableLibraryItemFactory(TimeSpan loanPeriod) : ILibrary
     
     public Result<ILibraryItem> Create(string itemType, string title)
     {
-        var borrowingBehavior = new BorrowingBehavior(LoanPeriod);
-        
         return LibraryItemMatcher.Match(itemType,
-            book: () => new Book(title, borrowingBehavior),
-            dvd: () => new Dvd(title, borrowingBehavior),
+            book: () => new Book(title, new BorrowingBehavior(new BorrowStatus(LoanPeriod, 2))),
+            dvd: () => new Dvd(title, new BorrowingBehavior(new BorrowStatus(LoanPeriod, 1.25))),
             archive: () => new Archive(title)); // No borrowing behavior here
     }
 }
