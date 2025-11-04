@@ -1,5 +1,4 @@
-﻿using DesignPatterns.Core.Items;
-using FluentResults;
+﻿using FluentResults;
 
 namespace DesignPatterns.Core.Factories;
 

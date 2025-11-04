@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Core.Items;
+﻿namespace DesignPatterns.Core;
 
 public sealed class Archive(string title) : ILibraryItem
 {

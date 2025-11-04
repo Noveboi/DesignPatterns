@@ -1,7 +1,7 @@
 ﻿using DesignPatterns.Core.Borrowing;
 using FluentResults;
 
-namespace DesignPatterns.Core.Items;
+namespace DesignPatterns.Core;
 
 public sealed class Dvd : ILibraryItem, IBorrowable
 {

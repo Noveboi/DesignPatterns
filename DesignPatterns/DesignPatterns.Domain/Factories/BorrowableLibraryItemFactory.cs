@@ -1,5 +1,4 @@
 ﻿using DesignPatterns.Core.Borrowing;
-using DesignPatterns.Core.Items;
 using FluentResults;
 
 namespace DesignPatterns.Core.Factories;

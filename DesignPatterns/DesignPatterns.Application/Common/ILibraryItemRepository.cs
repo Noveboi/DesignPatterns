@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Core.Items;
+﻿using DesignPatterns.Core;
 
 namespace DesignPatterns.Application.Common;
 
