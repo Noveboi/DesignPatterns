@@ -21,7 +21,7 @@ public static class HttpResultAdapter
                 Title = invalid.Message,
                 Status = 400
             }),
-            { Errors: [{ } error] } => TypedResults.UnprocessableEntity(error.Message) ,
+            { Errors: [{ } error] } => TypedResults.UnprocessableEntity(error.Message),
             _ => TypedResults.InternalServerError()
         };
     }

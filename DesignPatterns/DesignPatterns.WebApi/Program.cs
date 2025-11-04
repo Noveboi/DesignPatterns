@@ -2,11 +2,16 @@ using DesignPatterns.Application.Commands;
 using DesignPatterns.Application.Common;
 using DesignPatterns.Application.Common.Persistence;
 using DesignPatterns.Domain;
+using DesignPatterns.Infrastructure;
 using DesignPatterns.WebApi;
 using DesignPatterns.WebApi.Adapters;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepositoryImpl<>));
+builder.Services.AddScoped(typeof(IQueries<>), typeof(GenericQueriesImpl<>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddMediatR(o => o.RegisterServicesFromAssemblyContaining<BorrowLibraryItemCommand>());
 
