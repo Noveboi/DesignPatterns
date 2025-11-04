@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Core.Items;
+using FluentResults;
 
 namespace DesignPatterns.Core.Factories;
 
@@ -7,7 +8,7 @@ namespace DesignPatterns.Core.Factories;
 /// </summary>
 public sealed class StandardLibraryItemFactory : ILibraryItemFactory
 {
-    public ILibraryItem Create(string itemType, string title)
+    public Result<ILibraryItem> Create(string itemType, string title)
     {
         return LibraryItemMatcher.Match(itemType,
             book: () => new Book(title),

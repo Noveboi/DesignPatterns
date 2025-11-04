@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Core.Borrowing;
 using DesignPatterns.Core.Items;
+using FluentResults;
 
 namespace DesignPatterns.Core.Factories;
 
@@ -11,7 +12,7 @@ public sealed class BorrowableLibraryItemFactory(TimeSpan loanPeriod) : ILibrary
 {
     public TimeSpan LoanPeriod { get; } = loanPeriod;
     
-    public ILibraryItem Create(string itemType, string title)
+    public Result<ILibraryItem> Create(string itemType, string title)
     {
         var borrowingBehavior = new BorrowingBehavior(LoanPeriod);
         

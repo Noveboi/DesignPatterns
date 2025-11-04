@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Core.Items;
+using FluentResults;
 
 namespace DesignPatterns.Core.Factories;
 
@@ -7,7 +8,7 @@ namespace DesignPatterns.Core.Factories;
 /// </summary>
 internal static class LibraryItemMatcher
 {
-    public static ILibraryItem Match(
+    public static Result<ILibraryItem> Match(
         string itemType,
         Func<Book> book,
         Func<Dvd> dvd,
@@ -18,7 +19,7 @@ internal static class LibraryItemMatcher
             "book" => book(),
             "dvd" => dvd(),
             "archive" => archive(),
-            _ => throw new ArgumentOutOfRangeException(nameof(itemType), $"Item type '{itemType}' does not exist.")
+            _ => Result.Fail($"Item type '{itemType}' does not exist.")
         };
     }
 }
