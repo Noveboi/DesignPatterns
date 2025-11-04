@@ -110,3 +110,17 @@ class Archive : ILibraryItem { ... }
 #### Dependency Inversion
 
 As with the single responsibility principle, this principle is enforced everywhere in the solution due to Dependency Injection and designing for testability.
+
+### Implemented Design Patterns
+
+#### Abstract Factory
+
+In the app (see [this folder](https://github.com/Noveboi/DesignPatterns/tree/f4bd474cfd062eecc0ceea00bafc97889822df30/DesignPatterns/DesignPatterns.Domain/Factories)), there is an `ILibraryItemFactory` interface which has 2 implementations. The abstract factory is then exposed to consumers via the `LibraryItemFactoryProvider` static class which automatically decides which Factory to use.
+
+#### Factory
+
+The 2 implementations of the abstract factory `ILibraryItemFactory` are standard class that follow the Factory design pattern.
+
+#### Adapter
+
+The app uses the [FluentResults](https://github.com/altmann/FluentResults) library for representing success/error states. I have created an [Adapter](https://github.com/Noveboi/DesignPatterns/blob/f4bd474cfd062eecc0ceea00bafc97889822df30/DesignPatterns/DesignPatterns.WebApi/Adapters/HttpResultAdapter.cs) that converts the FluentResults `Result<T>` type to an ASP.NET Core `IResult` that can be used inside API endpoints.
