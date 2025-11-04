@@ -8,13 +8,15 @@ Contains all the documents for the final project.
 
 In the first exercise, I use a simplified library business model as the backbone for the application of the required design patterns and SOLID principles.
 
-The solution is written in C# and contains 3 projects structured with Clean Architecture:
+The solution is written in C# and contains 4 projects structured with a standard Clean Architecture approach:
 
 - **Domain**: Contains the code implementation of the business, including business logic.
 
 - **Application**: Contains business workflow/orchestration such as commands and queries.
 
 - **Infrastructure**: Contains any interaction with an external service (such as database and messaging).
+
+- **Web API**: Contains the main entry point of the system as well as REST API endpoint definition and dependency injection configuration.
 
 ### SOLID Principles
 
