@@ -7,4 +7,8 @@
         <RootNamespace>DesignPatterns.Core</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FluentResults" Version="4.0.0" />
+    </ItemGroup>
+
 </Project>
