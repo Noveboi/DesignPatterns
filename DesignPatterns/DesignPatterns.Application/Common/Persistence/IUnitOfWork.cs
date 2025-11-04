@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Application.Common;
+﻿namespace DesignPatterns.Application.Common.Persistence;
 
 /// <summary>
 /// Represents the Unit of Work pattern. Changes to the data store are persisted only when this interface's 

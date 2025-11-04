@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Core;
+﻿using DesignPatterns.Domain;
 
 namespace DesignPatterns.Application.Commands;
 

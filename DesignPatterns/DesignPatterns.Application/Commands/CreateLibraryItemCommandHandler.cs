@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.Application.Common;
-using DesignPatterns.Core;
-using DesignPatterns.Core.Factories;
+using DesignPatterns.Application.Common.Persistence;
+using DesignPatterns.Domain;
+using DesignPatterns.Domain.Factories;
 using FluentResults.Extensions;
 
 namespace DesignPatterns.Application.Commands;

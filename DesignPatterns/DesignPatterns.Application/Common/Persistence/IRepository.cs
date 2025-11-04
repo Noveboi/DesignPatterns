@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Application.Common;
+﻿namespace DesignPatterns.Application.Common.Persistence;
 
 /// <summary>
 /// Generic interface for modifying entities on the backing store.

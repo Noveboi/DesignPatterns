@@ -1,7 +1,7 @@
-﻿using DesignPatterns.Core.Borrowing;
+﻿using DesignPatterns.Domain.Borrowing;
 using FluentResults;
 
-namespace DesignPatterns.Core.Factories;
+namespace DesignPatterns.Domain.Factories;
 
 /// <summary>
 /// Factory for constructing library items with a loan period for borrowing purposes.

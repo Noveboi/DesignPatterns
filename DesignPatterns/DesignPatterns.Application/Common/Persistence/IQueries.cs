@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Application.Common;
+﻿namespace DesignPatterns.Application.Common.Persistence;
 
 /// <summary>
 /// Generic interface for querying entities. This can easily be decorated to provide additional behavior.

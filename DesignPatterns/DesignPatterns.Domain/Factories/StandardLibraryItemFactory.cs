@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace DesignPatterns.Core.Factories;
+namespace DesignPatterns.Domain.Factories;
 
 /// <summary>
 /// Factory for constructing library items with the minimal required information.

@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace DesignPatterns.Core.Factories;
+namespace DesignPatterns.Domain.Factories;
 
 /// <summary>
 /// Defines strongly typed and exhaustive 'switch' branches for library item types.

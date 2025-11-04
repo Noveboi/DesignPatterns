@@ -1,7 +1,7 @@
-﻿using DesignPatterns.Core.Borrowing;
+﻿using DesignPatterns.Domain.Borrowing;
 using FluentResults;
 
-namespace DesignPatterns.Core;
+namespace DesignPatterns.Domain;
 
 public sealed class Book : ILibraryItem, IBorrowable
 {

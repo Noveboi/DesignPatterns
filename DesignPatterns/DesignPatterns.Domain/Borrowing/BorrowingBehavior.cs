@@ -1,6 +1,7 @@
-﻿using FluentResults;
+﻿using DesignPatterns.Domain.Results;
+using FluentResults;
 
-namespace DesignPatterns.Core.Borrowing;
+namespace DesignPatterns.Domain.Borrowing;
 
 /// <summary>
 /// Configurable behavior for Borrowing an item.
@@ -28,7 +29,7 @@ public sealed class BorrowingBehavior
     {
         if (BorrowedAtUtc is not null)
         {
-            return Result.Fail($"Item has already been borrowed at {BorrowedAtUtc:F}");
+            return Result.Invalid($"Item has already been borrowed at {BorrowedAtUtc:F}");
         }
 
         BorrowedAtUtc = time;
@@ -41,12 +42,12 @@ public sealed class BorrowingBehavior
     {
         if (BorrowedAtUtc is null || BorrowedBy is null)
         {
-            return Result.Fail("Item has not been borrowed");
+            return Result.Invalid("Item has not been borrowed");
         }
 
         if (BorrowedBy != user)
         {
-            return Result.Fail($"{user} has not borrowed this item.");
+            return Result.Invalid($"{user} has not borrowed this item.");
         }
 
         BorrowedBy = null;

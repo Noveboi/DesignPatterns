@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Core;
+﻿namespace DesignPatterns.Domain;
 
 /// <summary>
 /// Any type of item that exists in a library. 

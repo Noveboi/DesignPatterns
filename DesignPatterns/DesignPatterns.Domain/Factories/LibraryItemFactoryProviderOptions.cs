@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Core.Factories;
+﻿namespace DesignPatterns.Domain.Factories;
 
 public sealed class LibraryItemFactoryProviderOptions
 {

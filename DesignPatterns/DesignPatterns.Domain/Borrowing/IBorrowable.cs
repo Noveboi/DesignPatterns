@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace DesignPatterns.Core.Borrowing;
+namespace DesignPatterns.Domain.Borrowing;
 
 /// <summary>
 /// Can be borrowed and returned by library users.

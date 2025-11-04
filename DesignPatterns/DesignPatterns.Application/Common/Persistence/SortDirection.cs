@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Application.Common;
+﻿namespace DesignPatterns.Application.Common.Persistence;
 
 public enum SortDirection
 {

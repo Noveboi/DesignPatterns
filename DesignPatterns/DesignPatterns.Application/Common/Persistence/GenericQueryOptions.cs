@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace DesignPatterns.Application.Common;
+namespace DesignPatterns.Application.Common.Persistence;
 
 public sealed class GenericQueryOptions<T>
 {
