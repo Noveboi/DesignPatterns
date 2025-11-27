@@ -1,0 +1,39 @@
+package id5qy5egdv4uwregdv78ou;
+
+/**
+@version 2.0
+@physicalPackage
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:java#Class#Shape:oiref><oihard>
+@__modelType reference 
+*/
+class reference {
+}/**
+@__ref <oiref:java#Class#Main:oiref><oihard>
+@__modelType reference 
+*/
+class reference1 {
+}/**
+@__ref <oiref:java#Class#GeometricShape:oiref><oihard>
+@__modelType reference 
+*/
+class reference2 {
+}}/**
+@__tags
+@shapeType ClassDiagram 
+*/
+class __tags {
+}/**
+@__options 
+*/
+class __options {
+}/**
+@__positions <oigroup:<oiref:java#Class#GeometricShape:oiref>=10,290,157,162,1:oigroup>
+<oigroup:<oiref:java#Class#Shape:oiref>=10,10,157,238,1:oigroup>
+<oigroup:<oiref:java#Class#Main:oiref>=187,10,83,85,1:oigroup> 
+*/
+class __positions {
+}
