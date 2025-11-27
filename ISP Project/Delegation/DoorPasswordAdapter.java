@@ -5,9 +5,4 @@ public class DoorPasswordAdapter implements PasswordClient {
     public void alarm() {
         System.out.println("Intruder ALERT!!!");
     }
-
-    @Override
-    public void setProtector(PasswordProtector protector) {
-
-    }    
 }
