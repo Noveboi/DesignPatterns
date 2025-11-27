@@ -2,7 +2,18 @@
 
 ## Shapes
 
-### Shape.java
+### Shape.java (initial)
+
+- Field Count: 5
+- Method Count: 4
+- `draw` references **5** fields
+- `paint` references **1** field
+- `getXLowerRightCorner` references **1** field
+- `getYLowerRightCorner` references **1** field
+
+$$ LCOM = 1 - \frac{5+1+1+1}{5 \cdot 4} = 1 - \frac{8}{20} = 0.6 $$
+
+### Shape.java (final)
 
 - Field Count: 5
 - Method Count: 2
