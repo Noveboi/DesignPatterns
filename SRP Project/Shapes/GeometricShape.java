@@ -1,3 +1,4 @@
+package Shapes;
 public class GeometricShape {
     private int width;
     private int height;

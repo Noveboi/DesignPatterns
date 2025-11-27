@@ -1,3 +1,4 @@
+package Shapes;
 import javax.swing.*;
 import java.awt.*;
 
