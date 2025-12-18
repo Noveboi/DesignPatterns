@@ -2,6 +2,9 @@
 
 namespace DesignPatterns.Domain.Factories;
 
+/// <summary>
+/// Factory specialized for book creation. 
+/// </summary>
 internal sealed class BookFactory(Isbn isbn, TimeSpan? loanPeriod) : ILibraryItemFactory
 {
     public Result<ILibraryItem> Create(string itemType, string title)

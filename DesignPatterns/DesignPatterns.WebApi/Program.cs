@@ -38,7 +38,8 @@ app.MapPost("items", (CreateLibraryItemRequest req, ISender sender, Cancellation
     {
         Title = req.Title,
         ItemType = req.ItemType,
-        LoanPeriod = req.LoanPeriodDays is { } days ? TimeSpan.FromDays(days) : null
+        LoanPeriod = req.LoanPeriodDays is { } days ? TimeSpan.FromDays(days) : null,
+        Isbn = req.Isbn is { } isbn ? new Isbn(isbn) : null,
     };
 
     return sender.Send(command, ct).AdaptAsync();
@@ -48,5 +49,9 @@ app.Run();
 
 namespace DesignPatterns.WebApi
 {
-    internal sealed record CreateLibraryItemRequest(string ItemType, string Title, int? LoanPeriodDays);
+    internal sealed record CreateLibraryItemRequest(
+        string ItemType, 
+        string Title, 
+        int? LoanPeriodDays,
+        string? Isbn);
 }

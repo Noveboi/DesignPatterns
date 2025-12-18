@@ -3,6 +3,9 @@ using DesignPatterns.Domain.Results;
 
 namespace DesignPatterns.Domain.Factories;
 
+/// <summary>
+/// Factory specialized for generic borrowable item creation.
+/// </summary>
 internal sealed class BorrowableLibraryItemFactory(TimeSpan period) : ILibraryItemFactory
 {
     public Result<ILibraryItem> Create(string itemType, string title)

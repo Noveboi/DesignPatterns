@@ -3,6 +3,9 @@ using DesignPatterns.Domain.Results;
 
 namespace DesignPatterns.Domain.Factories;
 
+/// <summary>
+/// Factory specialized for standard library item creation. 
+/// </summary>
 internal sealed class StandardLibraryItemFactory : ILibraryItemFactory
 {
     public Result<ILibraryItem> Create(string itemType, string title)
