@@ -1,17 +1,16 @@
-﻿using FluentResults;
+﻿using DesignPatterns.Domain.Borrowing;
+using DesignPatterns.Domain.Results;
 
 namespace DesignPatterns.Domain.Factories;
 
-/// <summary>
-/// Factory for constructing library items with the minimal required information.
-/// </summary>
-public sealed class StandardLibraryItemFactory : ILibraryItemFactory
+internal sealed class StandardLibraryItemFactory : ILibraryItemFactory
 {
     public Result<ILibraryItem> Create(string itemType, string title)
     {
         return LibraryItemMatcher.Match(itemType,
-            book: () => new Book(title),
-            dvd: () => new Dvd(title),
-            archive: () => new Archive(title));
+            book: () => Result.Invalid<Book>("A book requires an ISBN number"),
+            dvd: () => new Dvd(title, BorrowingBehavior.Create(Dvd.DefaultLoanPeriod)),
+            archive: () => new Archive(title)
+        );
     }
 }

@@ -8,6 +8,7 @@ public static class LibraryItemFactoryProvider
 
         return options switch
         {
+            { Isbn: { } isbn } => new BookFactory(isbn, options.LoanPeriod), 
             { LoanPeriod: { } period } => new BorrowableLibraryItemFactory(period),
             _ => new StandardLibraryItemFactory()
         };

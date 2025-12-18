@@ -1,6 +1,4 @@
-﻿using FluentResults;
-
-namespace DesignPatterns.Domain.Factories;
+﻿namespace DesignPatterns.Domain.Factories;
 
 /// <summary>
 /// Defines strongly typed and exhaustive 'switch' branches for library item types.
@@ -9,15 +7,15 @@ internal static class LibraryItemMatcher
 {
     public static Result<ILibraryItem> Match(
         string itemType,
-        Func<Book> book,
-        Func<Dvd> dvd,
-        Func<Archive> archive)
+        Func<Result<Book>> book,
+        Func<Result<Dvd>> dvd,
+        Func<Result<Archive>> archive)
     {
         return itemType.ToLowerInvariant() switch
         {
-            "book" => book(),
-            "dvd" => dvd(),
-            "archive" => archive(),
+            "book" => book().Map(ILibraryItem (x) => x),
+            "dvd" => dvd().Map(ILibraryItem (x) => x),
+            "archive" => archive().Map(ILibraryItem (x) => x),
             _ => Result.Fail($"Item type '{itemType}' does not exist.")
         };
     }
