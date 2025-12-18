@@ -11,10 +11,12 @@ namespace DesignPatterns.Infrastructure.Adapters;
 public sealed class LegacyBookAdapter : IBook, IBorrowable
 {
     private readonly Book _book;
-
-    private LegacyBookAdapter(Book book)
+    private readonly LibraryBook _adaptee;
+    
+    private LegacyBookAdapter(Book book, LibraryBook adaptee)
     {
         _book = book;
+        _adaptee = adaptee;
     }
 
     public static LegacyBookAdapter FromLegacy(LibraryBook legacyBook)
@@ -23,21 +25,7 @@ public sealed class LegacyBookAdapter : IBook, IBorrowable
             title: legacyBook.Name,
             isbn: new Isbn(legacyBook.Isbn));
         
-        return new LegacyBookAdapter(book);
-    }
-
-    public LibraryBook ToLegacy()
-    {
-        return new LibraryBook
-        {
-            Isbn = Isbn.ToString(),
-            Name = Title,
-            Status = BorrowStatus switch
-            {
-                { IsBorrowed: true } => LibraryItemStatus.Borrowed,
-                _ => LibraryItemStatus.Available
-            }
-        };
+        return new LegacyBookAdapter(book, legacyBook);
     }
 
     public Guid Id => _book.Id;
