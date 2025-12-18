@@ -1,5 +1,4 @@
 using DesignPatterns.Application.Commands;
-using DesignPatterns.Application.Common;
 using DesignPatterns.Application.Common.Persistence;
 using DesignPatterns.Domain;
 using DesignPatterns.Infrastructure;
@@ -22,8 +21,8 @@ app.MapGet("/items", (int page, int limit, IQueries<ILibraryItem> items, Cancell
     var options = new GenericQueryOptions<ILibraryItem>
     {
         DefaultSortProperty = x => x.Title,
-        Page = page,
-        Limit = limit,
+        PageNumber = page,
+        PageSize = limit,
     };
 
     return items.GetAsync(options, ct);

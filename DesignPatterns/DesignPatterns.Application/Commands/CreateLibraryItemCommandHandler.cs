@@ -1,5 +1,4 @@
-﻿using DesignPatterns.Application.Common;
-using DesignPatterns.Application.Common.Persistence;
+﻿using DesignPatterns.Application.Common.Persistence;
 using DesignPatterns.Domain;
 using DesignPatterns.Domain.Factories;
 using FluentResults.Extensions;

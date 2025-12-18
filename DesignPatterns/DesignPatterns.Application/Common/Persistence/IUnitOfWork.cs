@@ -6,5 +6,8 @@
 /// </summary>
 public interface IUnitOfWork
 {
-    Task<Result> SaveChangesAsync(CancellationToken ct);
+    /// <summary>
+    /// Persist changes to the underlying persistence store.
+    /// </summary>
+    Task<Result> SaveChangesAsync(CancellationToken ct = default);
 }

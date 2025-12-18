@@ -5,6 +5,13 @@
 /// </summary>
 public interface IRepository<in T>
 {
-    Result Add(T item);
-    Result Remove(T item);
+    /// <summary>
+    /// Mark an entity as "Added", then use <see cref="IUnitOfWork"/> to save changes and persist
+    /// </summary>
+    Result Add(T entity);
+    
+    /// <summary>
+    /// Mark an entity as "Deleted", then use <see cref="IUnitOfWork"/> to save changes and persist
+    /// </summary>
+    Result Remove(T entity);
 }

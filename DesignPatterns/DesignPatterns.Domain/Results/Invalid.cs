@@ -2,15 +2,9 @@
 
 namespace DesignPatterns.Domain.Results;
 
-public sealed class Invalid : IError
+public sealed class Invalid(string message, List<IError>? reasons = null) : IError
 {
-    public Invalid(string message, List<IError>? reasons = null)
-    {
-        Message = message;
-        Reasons = reasons ?? [];
-    }
-
-    public string Message { get; }
+    public string Message { get; } = message;
     public Dictionary<string, object> Metadata { get; } = [];
-    public List<IError> Reasons { get; }
+    public List<IError> Reasons { get; } = reasons ?? [];
 }

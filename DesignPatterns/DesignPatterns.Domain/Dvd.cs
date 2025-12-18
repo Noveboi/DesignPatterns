@@ -3,8 +3,13 @@ using FluentResults;
 
 namespace DesignPatterns.Domain;
 
+/// <summary>
+/// A library item that represents a typical DVD that can be borrowed.
+/// </summary>
 public sealed class Dvd : ILibraryItem, IBorrowable
 {
+    public static readonly TimeSpan DefaultLoanPeriod = TimeSpan.FromDays(7);
+    
     private readonly BorrowingBehavior _borrowBehavior;
     
     public Guid Id { get; } = Guid.CreateVersion7();
@@ -16,7 +21,7 @@ public sealed class Dvd : ILibraryItem, IBorrowable
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         
         Title = title;
-        _borrowBehavior = borrowingBehavior ?? new BorrowingBehavior(new BorrowStatus(TimeSpan.FromDays(7)));
+        _borrowBehavior = borrowingBehavior ?? new BorrowingBehavior(new BorrowStatus(DefaultLoanPeriod));
     }
 
     public Result Borrow(User user) => _borrowBehavior.Borrow(user, DateTime.UtcNow);

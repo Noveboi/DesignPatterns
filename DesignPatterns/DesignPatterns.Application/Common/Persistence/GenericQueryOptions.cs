@@ -4,8 +4,8 @@ namespace DesignPatterns.Application.Common.Persistence;
 
 public sealed class GenericQueryOptions<T>
 {
-    public int Page { get; init; } = 1;
-    public int Limit { get; init; } = 10;
+    public int PageNumber { get; init; } = 1;
+    public int PageSize { get; init; } = 10;
  
     /// <summary>
     /// The property that will be used to sort the data by default. This ensures that paginated results are consistent.
