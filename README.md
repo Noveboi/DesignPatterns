@@ -8,7 +8,7 @@ Contains all the documents for the final project.
 
 In the first exercise, I use a simplified library business model as the backbone for the application of the required design patterns and SOLID principles.
 
-The solution is written in C# and contains 4 projects structured with a standard Clean Architecture approach:
+The solution is written in C# and contains **4 + 1** projects structured with a standard Clean Architecture approach:
 
 - **Domain**: Contains the code implementation of the business, including business logic.
 
@@ -17,6 +17,8 @@ The solution is written in C# and contains 4 projects structured with a standard
 - **Infrastructure**: Contains any interaction with an external service (such as database and messaging).
 
 - **Web API**: Contains the main entry point of the system as well as REST API endpoint definition and dependency injection configuration.
+
+- **Legacy Library**: "Simulates" legacy code that is being used by the application
 
 ### SOLID Principles
 
@@ -123,4 +125,4 @@ The 2 implementations of the abstract factory `ILibraryItemFactory` are standard
 
 #### Adapter
 
-The app uses the [FluentResults](https://github.com/altmann/FluentResults) library for representing success/error states. I have created an [Adapter](https://github.com/Noveboi/DesignPatterns/blob/f4bd474cfd062eecc0ceea00bafc97889822df30/DesignPatterns/DesignPatterns.WebApi/Adapters/HttpResultAdapter.cs) that converts the FluentResults `Result<T>` type to an ASP.NET Core `IResult` that can be used inside API endpoints.
+I have created an adapter ([`LegacyBookAdapter`](https://github.com/Noveboi/DesignPatterns/blob/master/DesignPatterns/DesignPatterns.Infrastructure/Adapters/LegacyBookAdapter.cs)) that adapts the legacy code's `LibraryBook` (found in `LegacyLibrary` project) to the "modern" `Book` domain object.
