@@ -123,7 +123,7 @@ In the app (see [this folder](https://github.com/Noveboi/DesignPatterns/tree/f4b
 
 The 2 implementations of the abstract factory `ILibraryItemFactory` are standard class that follow the Factory design pattern.
 
-<img width="3780" height="3500" alt="image" src="https://github.com/user-attachments/assets/1e79780a-007a-44f6-919c-b9ec4fd15eb6" />
+<img width="3780" height="3500" alt="image" src="https://github.com/user-attachments/assets/0af7b84e-c995-4e41-bb76-e31e84e76d74" />
 
 #### Adapter
 
