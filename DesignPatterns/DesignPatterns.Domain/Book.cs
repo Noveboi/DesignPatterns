@@ -5,7 +5,7 @@ namespace DesignPatterns.Domain;
 /// <summary>
 /// A library item which represents a standard book. It can be borrowed.
 /// </summary>
-public sealed class Book : ILibraryItem, IBorrowable
+public sealed class Book : IBook, IBorrowable
 {
     public static readonly TimeSpan DefaultLoanPeriod = TimeSpan.FromDays(14);
     
@@ -16,7 +16,7 @@ public sealed class Book : ILibraryItem, IBorrowable
     public Isbn Isbn { get; }
     public BorrowStatus BorrowStatus => _borrowBehavior.Status;
 
-    internal Book(
+    public Book(
         string title, 
         Isbn isbn, 
         BorrowingBehavior? borrowingBehavior = null)
