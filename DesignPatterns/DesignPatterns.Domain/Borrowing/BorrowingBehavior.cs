@@ -1,5 +1,4 @@
 ﻿using DesignPatterns.Domain.Results;
-using FluentResults;
 
 namespace DesignPatterns.Domain.Borrowing;
 
@@ -9,6 +8,11 @@ namespace DesignPatterns.Domain.Borrowing;
 public sealed record BorrowingBehavior(BorrowStatus Status)
 {
     public BorrowStatus Status { get; private set; } = Status;
+
+    public static BorrowingBehavior Create(TimeSpan loanPeriod)
+    {
+        return new BorrowingBehavior(new BorrowStatus(loanPeriod));
+    }
     
     public Result Borrow(User user, DateTime time)
     {

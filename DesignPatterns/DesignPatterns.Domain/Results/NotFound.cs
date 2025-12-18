@@ -1,6 +1,4 @@
-﻿using FluentResults;
-
-namespace DesignPatterns.Domain.Results;
+﻿namespace DesignPatterns.Domain.Results;
 
 public sealed class NotFound(Type type) : IError
 {

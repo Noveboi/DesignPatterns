@@ -1,6 +1,4 @@
-﻿using FluentResults;
-
-namespace DesignPatterns.Domain.Results;
+﻿namespace DesignPatterns.Domain.Results;
 
 public sealed class Invalid(string message, List<IError>? reasons = null) : IError
 {
