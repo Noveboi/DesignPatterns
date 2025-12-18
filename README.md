@@ -123,6 +123,10 @@ In the app (see [this folder](https://github.com/Noveboi/DesignPatterns/tree/f4b
 
 The 2 implementations of the abstract factory `ILibraryItemFactory` are standard class that follow the Factory design pattern.
 
+<img width="3780" height="3500" alt="image" src="https://github.com/user-attachments/assets/1e79780a-007a-44f6-919c-b9ec4fd15eb6" />
+
 #### Adapter
 
 I have created an adapter ([`LegacyBookAdapter`](https://github.com/Noveboi/DesignPatterns/blob/master/DesignPatterns/DesignPatterns.Infrastructure/Adapters/LegacyBookAdapter.cs)) that adapts the legacy code's `LibraryBook` (found in `LegacyLibrary` project) to the "modern" `Book` domain object.
+
+<img width="2296" height="1776" alt="image" src="https://github.com/user-attachments/assets/f476d964-ff0c-4070-a4a1-f55630a17654" />
