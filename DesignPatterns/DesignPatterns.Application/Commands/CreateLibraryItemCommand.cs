@@ -21,4 +21,9 @@ public sealed class CreateLibraryItemCommand : IRequest<Result<ILibraryItem>>
     /// OPTIONAL: The amount of time that the item can be borrowed.
     /// </summary>
     public TimeSpan? LoanPeriod { get; init; }
+    
+    /// <summary>
+    /// OPTIONAL: The ISBN of a book, if the item is of a book type.
+    /// </summary>
+    public Isbn? Isbn { get; init; }
 }

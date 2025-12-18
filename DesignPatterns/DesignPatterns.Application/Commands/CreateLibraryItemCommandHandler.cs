@@ -12,7 +12,8 @@ internal sealed class CreateLibraryItemCommandHandler(IRepository<ILibraryItem> 
     {
         var factoryOptions = new LibraryItemFactoryProviderOptions
         {
-            LoanPeriod = request.LoanPeriod
+            LoanPeriod = request.LoanPeriod,
+            Isbn = request.Isbn
         };
 
         var factory = LibraryItemFactoryProvider.GetFactory(factoryOptions);
