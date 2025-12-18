@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace DesignPatterns.WebApi.Adapters;
 
 /// <summary>
-/// Adapter that maps a <see cref="FluentResults.Result"/> to an ASP.NET Core <see cref="IResult"/> instance.
+/// Maps a <see cref="FluentResults.Result"/> to an ASP.NET Core <see cref="IResult"/> instance.
 /// </summary>
-public static class HttpResultAdapter
+public static class HttpResultExtensions
 {
     public static IResult Adapt<T>(this Result<T> result)
     {
