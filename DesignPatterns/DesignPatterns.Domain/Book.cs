@@ -1,5 +1,4 @@
 ﻿using DesignPatterns.Domain.Borrowing;
-using FluentResults;
 
 namespace DesignPatterns.Domain;
 
@@ -14,13 +13,18 @@ public sealed class Book : ILibraryItem, IBorrowable
     
     public Guid Id { get; } = Guid.CreateVersion7();
     public string Title { get; }
+    public Isbn Isbn { get; }
     public BorrowStatus BorrowStatus => _borrowBehavior.Status;
 
-    internal Book(string title, BorrowingBehavior? borrowingBehavior = null)
+    internal Book(
+        string title, 
+        Isbn isbn, 
+        BorrowingBehavior? borrowingBehavior = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         
         Title = title;
+        Isbn = isbn;
         _borrowBehavior = borrowingBehavior ?? new BorrowingBehavior(new BorrowStatus(DefaultLoanPeriod));
     }
 
